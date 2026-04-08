@@ -28,7 +28,7 @@ definir reportes personalizados por cada uno de los conceptos creados por el cli
 estas pueden ser ingresos (por ejemplo: salario mensual, honorarios por trabajos extra, rendimientos de inversiones, regalos, etc) y/o gastos (por ejemplo: pago de arriendo, mercado, servicios públicos, entretenimiento, 
 donación, etc).
 
-## DICCIONARIO DE DATOS
+## Diccionario de datos
 
 ## Definición de abreviaturas para las restricciones manejadas en el diccionario de datos
 
