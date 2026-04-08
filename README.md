@@ -13,7 +13,7 @@ Este repositorio contiene el desarrollo completo de base de datos para una aplic
 
 ## 🚀 Entregables del Proyecto
 
-### 📂 Sprint 1 (10%): Modelado Inicial
+### 📂 Sprint 1
 1. [**Definición de entidades** a partir de las reglas de negocio del módulo.](./sprint1/1-definicion-entidades.md)
 2. [**Principales consultas** identificadas o preguntas a responder del módulo.](./sprint1/2-consultas.md)
 3. [**Definición de modelo lógico** con entidades y relaciones definidas (MER).](./sprint1/3-modelo-logico.md)
