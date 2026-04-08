@@ -1,4 +1,4 @@
-# Definición de Entidades para la Aplicación de Gestión Financiera
+# 1. Definición de Entidades para la Aplicación de Gestión Financiera
 
 ## Entidad #1: Usuario
 **Definición y necesidad de creación de la entidad:** es la entidad encargada de gestionar el correo de inicio de sesión, la contraseña encriptada y el estado de activación de la cuenta. 
