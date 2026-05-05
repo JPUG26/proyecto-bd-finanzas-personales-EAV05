@@ -5,5 +5,7 @@ Como parte del proceso de refinamiento el modelo ER y en general la base de dato
 
 A continuación se muestra el modelo ER con los cambios realizados para el segundo sprint del proyecto.
 
+
+
 ![Diagrama del Modelo Lógico](/sprint2/img/modelo_ER.png)
 
