@@ -4,8 +4,7 @@ Como parte del proceso de refinamiento el modelo ER y en general la base de dato
 * Se adicionó un check al campo estado llamado 'PENDIENTE_VERIFICACION'
 
 A continuación se muestra el modelo ER con los cambios realizados para el segundo sprint del proyecto.
-
-
-
+<br>
+<br>
 ![Diagrama del Modelo Lógico](/sprint2/img/modelo_ER.png)
 
