@@ -1,5 +1,5 @@
 # 3. Crear el script de despliegue de estructuras para el motor de Base de Datos.
-A continuación, se presenta el script luego de los últimos cambios realizados a la base de datos: 
+A continuación, se presenta el script luego de los últimos cambios realizados a la base de datos para el sprint #2: 
 
 ```sql
 
