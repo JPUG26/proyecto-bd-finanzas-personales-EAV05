@@ -1,5 +1,5 @@
 # 4. Crear las consultas identificadas o acciones del módulo para las HU correspondientes al Sprint 1 y 2 vs modelo físico.
-A continuación se presentan las diferentes consultas identificadas del módulo en cada uno de los sprint:
+A continuación se presentan las diferentes consultas identificadas del módulo en cada una de las historias de usuario:
 
 ## HU: Resgistrar Usuario
 
