@@ -7,7 +7,7 @@ CREATE TABLE clientes (
 	id_cliente BIGSERIAL PRIMARY KEY,
 	nombre VARCHAR(150) NOT NULL,
 	correo_contacto VARCHAR(150) UNIQUE,
-imagen_perfil VARCHAR(500),
+	imagen_perfil VARCHAR(500),
 	creado_en TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
 	actualizado_en TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
 	descripcion TEXT
@@ -16,13 +16,13 @@ imagen_perfil VARCHAR(500),
 CREATE TABLE usuarios (
 	id_usuario BIGSERIAL PRIMARY KEY,
 	correo VARCHAR(150) NOT NULL UNIQUE,
-            correo_verificado BOOLEAN NOT NULL DEFAULT FALSE, 
+	correo_verificado BOOLEAN NOT NULL DEFAULT FALSE, 
 	contrasena VARCHAR(255) NOT NULL,
-estado VARCHAR(30) NOT NULL CHECK (estado IN ('ACTIVO', 'INACTIVO', 'PENDIENTE', 'BLOQUEADO')),
-creado_en TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
-actualizado_en TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
-id_cliente BIGINT UNIQUE,
-CONSTRAINT fk_usuario_cliente FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
+	estado VARCHAR(30) NOT NULL CHECK (estado IN ('ACTIVO', 'INACTIVO', 'PENDIENTE', 'BLOQUEADO')),
+	creado_en TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+	actualizado_en TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+	id_cliente BIGINT UNIQUE,
+	CONSTRAINT fk_usuario_cliente FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
 );
 
 CREATE TABLE codigos_verificacion (
@@ -41,23 +41,23 @@ CREATE TABLE categorias (
 	nombre VARCHAR(50) NOT NULL,
 	icono VARCHAR(500) NOT NULL,
 	tipo VARCHAR(10) NOT NULL CHECK (tipo IN ('INGRESO', 'GASTO')),
-creado_en TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
-actualizado_en TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
-id_cliente BIGINT NOT NULL,
-CONSTRAINT fk_categoria_cliente FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
+	creado_en TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+	actualizado_en TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+	id_cliente BIGINT NOT NULL,
+	CONSTRAINT fk_categoria_cliente FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
 );
 
 CREATE TABLE transacciones (
-id_transaccion BIGSERIAL PRIMARY KEY,
-nombre VARCHAR(150) NOT NULL,
-monto NUMERIC(15,2) NOT NULL CHECK (monto > 0),
-movimiento_en TIMESTAMPTZ NOT NULL,
-creado_en TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
-actualizado_en TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
-tipo VARCHAR(10) NOT NULL CHECK (tipo IN ('INGRESO', 'GASTO')),
-id_cliente BIGINT NOT NULL,
-id_categoria BIGINT NOT NULL,
-CONSTRAINT fk_transaccion_cliente FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
-CONSTRAINT fk_transaccion_categoria FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria)
+	id_transaccion BIGSERIAL PRIMARY KEY,
+	nombre VARCHAR(150) NOT NULL,
+	monto NUMERIC(15,2) NOT NULL CHECK (monto > 0),
+	movimiento_en TIMESTAMPTZ NOT NULL,
+	creado_en TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+	actualizado_en TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+	tipo VARCHAR(10) NOT NULL CHECK (tipo IN ('INGRESO', 'GASTO')),
+	id_cliente BIGINT NOT NULL,
+	id_categoria BIGINT NOT NULL,
+	CONSTRAINT fk_transaccion_cliente FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
+	CONSTRAINT fk_transaccion_categoria FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria)
 );
 ```
