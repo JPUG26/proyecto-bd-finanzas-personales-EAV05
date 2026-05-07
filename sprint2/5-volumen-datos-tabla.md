@@ -93,7 +93,7 @@ A pesar de que ninguno de los campos acepta valores nulos se debe incluir 1 byte
 L = (4x2) + (8+12+8+8+8+8+8) + 1 + (50 + 7) = 126 bytes
 
 ## Proyección del volumen total de la base de datos con datos supuestos 
-Suponiendo un uso en la aplicación de 1000 usuarios, con 100 categorías creadas, un promedio de 100 transacciones creadas por usuario y generación de 10 códigos por usuario se puede tener la siguiente proyección del volumen todal de la base de datos:
+Suponiendo un uso en la aplicación de 1000 usuarios, con 100 categorías creadas, un promedio de 100 transacciones creadas por usuario y generación de 10 códigos por usuario se puede tener la siguiente proyección del volumen total de la base de datos:
 
 | Tabla | Bytes por Registro ($L$) | Cantidad Estimada ($N$) | Volumen Total (MB) |
 | :--- | :--- | :--- | :--- |
