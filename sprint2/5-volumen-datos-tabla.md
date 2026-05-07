@@ -65,28 +65,29 @@ nombre, icono, tipo
 * ### Mapa bits
 A pesar de que ninguno de los campos acepta valores nulos se debe incluir 1 byte obligatoriamente por el alineamiento de bytes en postgreSQL. 
 * ### Tamaño estimado usado de campos variables
-  * Campo nombre tamaño estimado: 40 bytes
-  * Campo icono tamaño estimado: 60 bytes (definición por la longitud de un hash)
-  * Campo tipo tamaño estimado: 22 bytes (longitud de máximo valor aceptado 'PENDIENTE_VERIFICACION')
+  * Campo nombre con tamaño estimado:20 bytes
+  * Campo icono con tamaño estimado: 50 bytes (longitud estimada de la URL donde se almacenerá el icono)
+  * Campo tipo con tamaño estimado: 7 bytes (longitud de máximo valor aceptado 'ingreso')
  
 ### Calculo de la longitud estimada del registro
-L = (4x3) + (8+8+8+8+1) + 1 + (40 + 60 + 22) = 168 bytes
+L = (4x3) + (8+8+8+8) + 1 + (20+50+7) = 122
 
 ## Volumen de datos de la tabla transacciones
 * ### Campos variables: 
-correo, contrasena, estado
+nombre, tipo
 * ### Campos fijos: 
-  * id_usuario (es de tipo BIGSERIAL de tamaño 8 Bytes), 
-  * id_cliente (es de tipo BIGINT de tamaño 8 Bytes), 
-  * creado_en (es de tipo TIMESTAMPTZ de tamaño 8 bytes), 
+  * id_transaccion (es de tipo BIGSERIAL de tamaño 8 Bytes), 
+  * monto (es de tipo NUMERIC(15,2) es de longitud variable depende del número almacenado, la longitud oscila entre 8 y 16 bytes se asignará el valor promedio de 12),
+  * movimiento_en (es de tipo TIMESTAMPTZ de tamaño 8 bytes),
+  * creado_en (es de tipo TIMESTAMPTZ de tamaño 8 bytes),
   * actualizado_en (es de tipo TIMESTAMPTZ de tamaño 8 bytes), 
-  * correo_verificado (es de tipo BOOLEAN de tamaño 1 byte)
+  * id_categoria (es de tipo BIGINT de tamaño 8 bytes), 
+  * id_cliente (es de tipo BIGINT de tamaño 8 bytes)
 * ### Mapa bits
-Como el campo id_cliente (llave foránea) permite valores nulos inicialmente se utiliza 1 byte para gestionar valores nulos.
+A pesar de que ninguno de los campos acepta valores nulos se debe incluir 1 byte obligatoriamente por el alineamiento de bytes en postgreSQL. 
 * ### Tamaño estimado usado de campos variables
-  * Campo correo tamaño estimado: 40 bytes
-  * Campo contraseña tamaño estimado: 60 bytes (definición por la longitud de un hash)
-  * Campo estado tamaño estimado: 22 bytes (longitud de máximo valor aceptado 'PENDIENTE_VERIFICACION')
+  * Campo nombre con tamaño estimado: 50 bytes
+  * Campo tipo con tamaño estimado: 7 bytes
  
 ### Calculo de la longitud estimada del registro
-L = (4x3) + (8+8+8+8+1) + 1 + (40 + 60 + 22) = 168 bytes
+L = (4x2) + (8+12+8+8+8+8+8) + 1 + (50 + 7) = 126
