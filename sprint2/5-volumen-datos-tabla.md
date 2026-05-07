@@ -70,7 +70,7 @@ A pesar de que ninguno de los campos acepta valores nulos se debe incluir 1 byte
   * Campo tipo con tamaño estimado: 7 bytes (longitud de máximo valor aceptado 'ingreso')
  
 ### Calculo de la longitud estimada del registro
-L = (4x3) + (8+8+8+8) + 1 + (20+50+7) = 122
+L = (4x3) + (8+8+8+8) + 1 + (20+50+7) = 122 bytes
 
 ## Volumen de datos de la tabla transacciones
 * ### Campos variables: 
@@ -90,4 +90,17 @@ A pesar de que ninguno de los campos acepta valores nulos se debe incluir 1 byte
   * Campo tipo con tamaño estimado: 7 bytes
  
 ### Calculo de la longitud estimada del registro
-L = (4x2) + (8+12+8+8+8+8+8) + 1 + (50 + 7) = 126
+L = (4x2) + (8+12+8+8+8+8+8) + 1 + (50 + 7) = 126 bytes
+
+Suponiendo un uso en la aplicación de 1000 usuarios, con 100 categorías creadas, un promedio de 100 transacciones creadas por usuario y generación de 10 códigos por usuario se puede tener la siguiente proyección del volumen todal de la base de datos:
+
+| Tabla | Bytes por Registro ($L$) | Cantidad Estimada ($N$) | Volumen Total (MB) |
+| :--- | :--- | :--- | :--- |
+| `usuarios` | 168 | 1000 usuarios | 0.1602 MB |
+| `clientes` | 471 (por fotos/desc) | 1000 perfiles | 0.449 MB |
+| `categorias` | 122 | 100 categorías | 0.0116 MB |
+| `transacciones` | 126 | 100000 (100 p/u) | 12.016 MB |
+| `codigos_verif` | 71 | 10000 códigos | 0.0377 MB |
+| **TOTAL ESTIMADO** | | | **Aproximadamente 12.6745 MB** |
+
+
