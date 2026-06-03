@@ -26,3 +26,8 @@ Este repositorio contiene el desarrollo completo de base de datos para una aplic
 4. [Crear las consultas identificadas o acciones del módulo para las HU correspondientes al Sprint 1 y 2 vs modelo físico.](./sprint2/4-consultas-identificadas.md)
 5. [Definir volumen de datos por tabla aproximado.](./sprint2/5-volumen-datos-tabla.md)
 6. [Definición de roles y esquema de seguridad para la aplicación en la base de datos relacional.](./sprint2/6-definicion-roles-esquema-seguridad.md)
+
+### 📂 Sprint 3
+1. [Refinar el Modelo Entidad-Relación (MER).](./sprint3/1-modelo-refinado.md)
+2. [Crear o refinar el script de creación de objetos con trigger y procedimientos para las HU desarolladas.](./sprint3/2-script-creacion-objetos.md)
+3. [Refinar el análisis del volumen de datos de las entidades identificadas.](./sprint3/3-refinamiento-analisis-volumen-datos.md)
