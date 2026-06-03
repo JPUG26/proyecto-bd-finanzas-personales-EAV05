@@ -1,5 +1,5 @@
 # 2. Crear o refinar el script de creación de objetos en general con Trigger y procedimientos para las HU desarrolladas.
-Nota: Los triggers y procedimientos almacenados no fueron implementados durante los Sprints 1 y 2. La lógica de negocio fue desarrollada íntegramente en la capa de aplicación (Spring Boot) siguiendo los principios de la Arquitectura Hexagonal. Este apartado documenta cómo podrían implementarse en futuras iteraciones del proyecto.
+**Nota:** Los triggers y procedimientos almacenados no fueron implementados durante los Sprints 1 y 2. La lógica de negocio fue desarrollada íntegramente en la capa de aplicación (Spring Boot) siguiendo los principios de la Arquitectura Hexagonal. Este apartado documenta cómo podrían implementarse en futuras iteraciones del proyecto.
 
 ## Justificación de la decisión de diseño
 En la Arquitectura Hexagonal el dominio y los casos de uso viven en el código Java, no en la base de datos. Esto garantiza que la lógica sea completamente testeable, portable entre motores de BD y fácil de depurar. Delegar lógica a triggers crearía dependencias ocultas que romperían este principio arquitectónico.
